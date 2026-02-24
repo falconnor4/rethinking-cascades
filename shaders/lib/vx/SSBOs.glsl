@@ -102,6 +102,14 @@ layout(std430, binding = 3) WRITE_TO_SSBOS buffer misc {
 layout(r32i) uniform WRITE_TO_SSBOS iimage3D pointerVolumeI;
 int readVolumePointer(ivec3 coords, int index) {
 	return imageLoad(pointerVolumeI, ivec3(coords.x, 8 * coords.y + index, coords.z)).x;
+}
+
+// Radiance cascades - 2D atlas for multi-direction radiance storage
+#ifdef READONLY
+	uniform sampler2D radianceCascades;
+#else
+	layout(rgba32f) uniform image2D radianceCascadesI;
+#endif
 	//return pointerVolume[index][coords.x][coords.y][coords.z];
 }
 #ifndef READONLY

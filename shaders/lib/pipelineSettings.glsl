@@ -15,7 +15,8 @@ const int colortex9Format = R32UI; // integer depth for sorting
 const int shadowcolor0Format = RGBA16;
 const int shadowcolor1Format = RGBA16;
 const int colortex12Format = RGBA16F;		//previous frame lighting
-*/
+const int colortex16Format = RGBA32F;		//radiance cascades
+ */
 
 const bool colortex0Clear = true;
 const vec4 colortex0ClearColor = vec4(2.0, 2.0, 2.0, 2.0);
@@ -31,6 +32,7 @@ const bool colortex7Clear = false;
 // temporal voxel data such as flood fill
 
 const bool colortex12Clear = false;
+const bool colortex16Clear = false;
 
 const int noiseTextureResolution = 128;
 
